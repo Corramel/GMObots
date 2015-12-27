@@ -10,7 +10,7 @@ client.on("message", function(message){
 });
 client.on("message", function(message){
   if(message.content === "#!stop"){
-    client.logoff
+    client.logout("error")
     return;
   }
 });
