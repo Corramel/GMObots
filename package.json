@@ -6,9 +6,9 @@
     "type": "git",
     "url": "git+https://github.com/Corramel/super-duper-telegram.git"
   },
-  "keywords": [
-    "discord",
-  ],
+  "keywords": {
+    "discord"
+  },
   "author": "John Smith",
   "license": "MIT",
   "bugs": {
