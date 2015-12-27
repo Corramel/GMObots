@@ -1,7 +1,7 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
-client.on("message", function(message){
-  client.setStatus('online', message.content);
+client.on("message", function(m){
+  client.setStatus('online', m.content);
 });
 
 /* var ytdl = require('ytdl-core');
