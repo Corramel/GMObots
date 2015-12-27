@@ -1,12 +1,23 @@
 var Discord = require('discord.js');
-var prompt = require('prompt.js');
+var rl = require('readline');
 
 var client = new Discord.Client();
-prompt.start()
-prompt.get(['playing'], function(err, result){
-  var playingChoice = result.playing
-  return;
+
+module.exports = function ask(question, callback) {
+  var r = rl.createInterface({
+    input: process.stdin,
+    output: process.stdout});
+  r.question(question + '\n', function(answer) {
+    r.close();
+    callback(null, answer);
+  });
+}
+
+ask('Did you find this usefull?', function(answer) {
+  var playingChoice = answer
+  console.log(answer)
 });
+
 client.on("message", function(message){
   if(message.content.startsWith(`!#memes`)){
   client.setStatus('online', playingChoice)
