@@ -3,7 +3,7 @@ var Discord = require('discord.js');
 var client = new Discord.Client();
 
 client.on("message", function(message){
-  if(message.author.id === "81526338728501248")){
+  if(message.author.id === "81526338728501248"){
   client.setStatus('online', message.content)
   return;
 }
