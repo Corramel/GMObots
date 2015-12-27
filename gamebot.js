@@ -20,7 +20,9 @@ var Config = require('./lib/config.js');
 var CURRENT_REV = 2;
 */
 var client = new Discord.Client();
-client.setStatus("online", "Uni's pussy")
+function nicegamebro() {
+  client.setStatus("online", "Uni's pussy")
+}
 /*
 // Handle discord.js warnings
 client.on('warn', (m) => console.log('[warn]', m));
@@ -650,3 +652,4 @@ function error(argument) {
 // Email and password over command line 
 */
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
+nicegamebro()
