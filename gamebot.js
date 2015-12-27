@@ -2,7 +2,7 @@ var Discord = require('discord.js');
 var client = new Discord.Client();
 client.on("message", function(message){
   if(message.content.startsWith(`!#memes`)){
-  client.setStatus('online', "niggers in west africa")
+  client.setStatus('online', "with Uni 💕")
   return;
 }
 });
