@@ -3,7 +3,8 @@ var rl = require('readline');
 
 var client = new Discord.Client();
 
-module.exports = function ask(question, callback) {
+// module.exports = 
+function ask(question, callback) {
   var r = rl.createInterface({
     input: process.stdin,
     output: process.stdout});
