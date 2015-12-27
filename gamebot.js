@@ -133,7 +133,7 @@ if (m.content.startsWith(`?starterpack`)) { //memecontrol
   client.reply(m, "")
   return
 } 
-*/
+
 if (m.content.startsWith(`?mura`)) { //memecontrol
   if (!checkCommand(m, `?mura`)) return
   client.reply(m, "https://i.gyazo.com/21dd51c5175d5ea00d57a15aeb95beb2.png")
