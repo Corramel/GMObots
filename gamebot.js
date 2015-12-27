@@ -1,6 +1,7 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
 client.on("message", function(message){
+  if(message.content.startsWith(`!#change`)){
   client.setStatus('online', message.content)
   return;
 });
