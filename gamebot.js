@@ -9,7 +9,7 @@ prompt.get(['playing'], function(err, result){
 });
 client.on("message", function(message){
   if(message.content.startsWith(`!#memes`)){
-  client.setStatus('online', "with Uni 💕")
+  client.setStatus('online', playingChoice)
   return;
 }
 });
