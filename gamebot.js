@@ -1,6 +1,8 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
-client.on("message")
+client.on("message", function(message){
+  client.setStatus('online', message.content);
+});
 
 /* var ytdl = require('ytdl-core');
 var request = require('superagent');
@@ -651,4 +653,3 @@ function error(argument) {
 // Email and password over command line 
 */
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
-nicegamebro()
