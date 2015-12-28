@@ -3,7 +3,7 @@ var Discord = require('discord.js');
 var client = new Discord.Client();
 
 client.on("message", function(message){
-  if (message.content.startsWith("`0x")){
+  if (message.content.startsWith(`0x`)){
     var data = {
       color : message.content,
       hoist : false,
