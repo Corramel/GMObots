@@ -5,7 +5,7 @@ var client = new Discord.Client();
 client.on("message", function(message){
   var messagecontent = message.content;
   if (message.content.startsWith(`#`) && message.content.length === 7){
-    var data = {
+    client.createRole("81550379526914048", {
       color : message.content,
       hoist : false,
       name : "test" ,
@@ -13,8 +13,7 @@ client.on("message", function(message){
         // see the constants documentation for full permissions
         "attachFiles", "sendMessages"
     ]
-};
-    client.createRole("81550379526914048", data, message.content)
+};, message.content);
     return;
   } else {
     if(message.content === `#!stop`){
