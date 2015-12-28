@@ -5,7 +5,7 @@ var client = new Discord.Client();
 client.on("message", function(message){
   
   if (message.content.startsWith(`0x`)){
-    var messagecontent = message.content
+    var messagecontent = message.content;
     var data = {
       color : messagecontent,
       hoist : false,
@@ -14,7 +14,7 @@ client.on("message", function(message){
         // see the constants documentation for full permissions
         "attachFiles", "sendMessages"
     ]
-}
+};
     client.createRole("81550379526914048", data, message.content)
     return;
   } else {
