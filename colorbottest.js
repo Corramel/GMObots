@@ -4,11 +4,11 @@ var client = new Discord.Client();
 
 client.on("message", function(message){
   var messagecontent = message.content;
-  if (message.content.startsWith(`0x`)){
+  if (message.content.startsWith(`#`) && message.content.length === 7){
     var data = {
-      color : messagecontent,
+      color : message.content,
       hoist : false,
-      name : messagecontent,
+      name : "test" ,
       permissions : [
         // see the constants documentation for full permissions
         "attachFiles", "sendMessages"
