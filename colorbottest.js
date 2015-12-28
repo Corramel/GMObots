@@ -5,8 +5,8 @@ var client = new Discord.Client();
 client.on("message", function(message){
   var messagecontent = message.content;
   if (message.content.startsWith(`#`) && message.content.length === 7){
-    createRole("81550379526914048", {
-      color : message.content,
+    client.createRole("81550379526914048", {
+      color : "0xD490BB",
       hoist : false,
       name : "test",
       permissions : [
