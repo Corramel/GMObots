@@ -26,6 +26,6 @@ client.on("message", function(message){
   client.setStatus('online', message.content)
   return;
 }
-
+}
 });
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
