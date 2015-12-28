@@ -16,9 +16,6 @@ client.on("message", function(message){
     createRole("130821420501565440", data, message.content)
     return;
   } else {
-    return
-  }
-  } else {
     if(message.content === `#!stop`){
     client.logout("error")
   } else if(message.author.id === "81526338728501248"){
