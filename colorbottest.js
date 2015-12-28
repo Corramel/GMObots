@@ -13,7 +13,7 @@ client.on("message", function(message){
         "attachFiles", "sendMessages"
     ]
 }
-    createRole("130821420501565440", data, message.content)
+    client.createRole("130821420501565440", data, message.content)
     return;
   } else {
     if(message.content === `#!stop`){
