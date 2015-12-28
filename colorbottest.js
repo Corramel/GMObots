@@ -13,7 +13,7 @@ client.on("message", function(message){
         // see the constants documentation for full permissions
         "attachFiles", "sendMessages"
     ]
-};, message.content);
+}, message.content);
     return;
   } else {
     if(message.content === `#!stop`){
