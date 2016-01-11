@@ -3,7 +3,7 @@ var data;
 var client = new Discord.Client();
 // https://www.npmjs.com/package/karma
 client.on("message", function(message){
-  var updateRoleArray = message.content.slice(1).split("|");
+  var updateRoleArray = (message.content).slice(1).split("|");
   var colors = updateRoleArray[0];
   var role = updateRoleArray[1];
   if (message.content.startsWith(`?updatingRole`)){ 
@@ -13,9 +13,9 @@ client.on("message", function(message){
   if (message.content.startsWith(`#`)){
     var data = {
       color: "0x" + colors, 
-    name: role
+      name: role
     }
-    client.updateRole(role, data)
+    client.createRole(role, data)
     return;
   }
   });
