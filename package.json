@@ -18,10 +18,12 @@
   "homepage": "https://github.com/Corramel/super-duper-telegram#super-duper-telegram",
   "dependencies": {
     "discord.js": "hydrabolt/discord.js#master",
-    "request": "^2.67.0",
+    "request": "#latest",
     "ytdl-core": "^0.7.6",
     "node-opus": "^0.1.11",
     "git-rev": "^0.2.1"
+    "cheerio": "#latest",
+    "moment": "#latest"
   },
   "version": "1.0.0"
 }
