@@ -10,7 +10,7 @@ client.on("message", function(message){
     client.sendMessage(m.channel, "`The format for the updating role is #(Hex without hash-tag)|Rolename .`");
     return;
   }
-  if (message.content.startsWith(`#`){
+  if (message.content.startsWith(`#`)){
     var data = {
       color: "0x" + colors, 
     name: role
