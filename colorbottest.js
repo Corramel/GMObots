@@ -6,7 +6,7 @@ client.on("message", function(message){
   var updateRoleArray = message.content.slice(1).split("|");
   var colors = updateRoleArray[0];
   var role = updateRoleArray[1];
-  if (message.content.startsWith(`?updatingRole`)){
+  if (message.content.startsWith(`?updatingRole`)){ 
     client.sendMessage(m.channel, "`The format for the updating role is #(Hex without hash-tag)|Rolename .`");
     return;
   }
@@ -15,7 +15,7 @@ client.on("message", function(message){
       color: "0x" + colors, 
     name: role
     }
-    client.updateRole(role, data, callback(error, role){})
+    client.updateRole(role, data, callback(error, role))
     return;
   }
   });
