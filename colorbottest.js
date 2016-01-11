@@ -15,7 +15,7 @@ client.on("message", function(message){
       color: "0x" + colors, 
     name: role
     }
-    client.updateRole(role, data, callback(error, role))
+    client.updateRole(role, data)
     return;
   }
   });
