@@ -17,6 +17,7 @@ client.on("message", function(message){
     }
     client.updateRole(role, data, callback(error, role){});
     return;
+  });
 /*  } else {
     if(message.content === `#!stop`){
     client.logout("error")
