@@ -1,7 +1,7 @@
 var Discord = require('discord.js');
 var data = {color:"0xD490BB", hoist : false, name : "test", permissions : [ "attachFiles", "sendMessages"]};
 var client = new Discord.Client();
-
+// https://www.npmjs.com/package/karma
 client.on("message", function(message){
   var messagecontent = message.content;
   if (message.content.startsWith(`#`) && message.content.length === 7){
