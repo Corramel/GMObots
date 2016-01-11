@@ -11,10 +11,11 @@ client.on("message", function(message){
     return;
   }
   if (message.content.startsWith(`#`){
-    var data = {color:"0x" + colors, name: role}
-    client.updateRole(role, data, callback(){
-      
-    });
+    var data = {
+      color: "0x" + colors, 
+    name: role
+    }
+    client.updateRole(role, data, callback(error, role){});
     return;
 /*  } else {
     if(message.content === `#!stop`){
