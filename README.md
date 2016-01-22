@@ -1,2 +1,2 @@
-# super-duper-telegram
+# GMOBot, for AP Bio
 Dank memes!
