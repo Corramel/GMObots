@@ -21,7 +21,7 @@
     "request": "#latest",
     "ytdl-core": "^0.7.6",
     "node-opus": "^0.1.11",
-    "git-rev": "^0.2.1"
+    "git-rev": "^0.2.1",
     "cheerio": "#latest",
     "moment": "#latest"
   },
