@@ -36,7 +36,6 @@ client.on('message', m => {
   }
 
   if (m.content.startsWith(`?init`)) { // init
-    if (!checkCommand(m, '?init')) return;
     if (boundChannel) return;
     var channelToJoin = spliceArguments(m.content)[1];
     for (var channel of m.channel.server.channels) {
@@ -52,7 +51,6 @@ client.on('message', m => {
   }
 
   if (m.content.startsWith(`?destroy`)) { // destroy
-    if (!checkCommand(m, 'destroy')) return;
     if (!boundChannel) return;
     client.reply(m, `Unbinding from <#${boundChannel.id}> and destroying meme connection`);
     playQueue = [];
@@ -65,12 +63,13 @@ client.on('message', m => {
 
   // Only respond to other messages inside the bound channel
   if (!m.channel.equals(boundChannel)) return;
+  
   if(m.content.toLowerCase().startsWith(`what is the best GMO food?`) or m.content.toLowerCase().startsWith(`?gimo`)){
-  var meme = ytdl("https://www.youtube.com/watch?v=P1j5cVj5miA", var options = { filter: (format) => format.container === 'mp3',quality: 'lowest',};)
-  if (client.internal.voiceConnection) {
-    var connection = client.internal.voiceConnection;
-    currentStream = YoutubeStream.getStream(meme);
-
+    var meme = ytdl("https://www.youtube.com/watch?v=P1j5cVj5miA", var options = { filter: (format) => format.container === 'mp3',quality: 'lowest',};)
+    if (client.internal.voiceConnection) {
+        var connection = client.internal.voiceConnection;
+        currentStream = YoutubeStream.getStream(meme);
+    }
   return;
   }
  /* if (m.content.startsWith(`${botMention} y`) // youtube
