@@ -27,7 +27,6 @@ var stockpile = '';
 // Handling api key
 
 client.on('message', m => {
-  if (!botMention) return;
   if (client.user.id == m.author.id) return;
 
   if (m.content.startsWith(`?help`)) { // help
