@@ -67,7 +67,11 @@ client.on('message', m => {
   // Only respond to other messages inside the bound channel
   if (!m.channel.equals(boundChannel)) return;
   if(m.content.toLowerCase().startsWith(`what is the best GMO food?`) or m.content.toLowerCase().startsWith(`?gimo`)){
-  ytdl("https://www.youtube.com/watch?v=P1j5cVj5miA", var options = { filter: (format) => format.container === 'mp3',quality: 'lowest',};)
+  var meme = ytdl("https://www.youtube.com/watch?v=P1j5cVj5miA", var options = { filter: (format) => format.container === 'mp3',quality: 'lowest',};)
+  if (client.internal.voiceConnection) {
+    var connection = client.internal.voiceConnection;
+    currentStream = YoutubeStream.getStream(meme);
+
   return;
   }
  /* if (m.content.startsWith(`${botMention} y`) // youtube
