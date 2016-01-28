@@ -1,2 +1,2 @@
-# super-duper-telegram
-Dank memes!
+# GMObots, a chatbot for AP Bio
+Really dank memes!
