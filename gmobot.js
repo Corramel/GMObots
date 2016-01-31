@@ -28,13 +28,12 @@ var stockpile = '';
 
 client.on('message', function(message){
   if (client.user.id === message.author.id) return;
-  if (message.content.startsWith(`?help`)) { // help
-    if (!checkCommand(message, '?help')) return;
+  if (message.content.startsWith('?help')) { // help
     client.reply(message, 'TBA');
     return;
   }
 
-  if (message.content.startsWith(`?init`)) { // init
+  if (message.content.startsWith('?init')) { // init
     if (boundChannel) return;
     var channelToJoin = spliceArguments(message.content)[1];
     for (var channel of message.channel.server.channels) {
@@ -49,7 +48,7 @@ client.on('message', function(message){
     }
   }
 
-  if (message.content.startsWith(`?destroy`)) { // destroy
+  if (message.content.startsWith('?destroy')) { // destroy
     if (!boundChannel) return;
     client.reply(message, `Unbinding from <#${boundChannel.id}> and destroying meme connection`);
     playQueue = [];
@@ -63,7 +62,7 @@ client.on('message', function(message){
   // Only respond to other messages inside the bound channel
   if (!message.channel.equals(boundChannel)) return;
   
-  if(message.content.toLowerCase().startsWith(`what is the best GMO food?`) or message.content.toLowerCase().startsWith(`?gimo`)){
+  if(message.content.toLowerCase().startsWith('what is the best GMO food?') or message.content.toLowerCase().startsWith('?gimo')){
     var meme = ytdl("https://www.youtube.com/watch?v=P1j5cVj5miA", var options = { filter: (format) => format.container === 'mp3',quality: 'lowest',};)
     if (client.internal.voiceConnection) {
         var connection = client.internal.voiceConnection;
