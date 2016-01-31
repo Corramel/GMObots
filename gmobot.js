@@ -27,7 +27,7 @@ var stockpile = '';
 // Handling api key
 
 client.on('message', {
-  if (message.content.startsWith(`?help`)) { // help
+  if(message.content.startsWith(`?help`)) { // help
     if (!checkCommand(message, '?help')) return;
     client.reply(message, 'TBA');
     return;
