@@ -137,4 +137,6 @@ function play(vid2beplayed) {
       boundChannel.sendMessage(`There was an error during playback, error: **${err}**`);
     });
 }
+}
+})
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
