@@ -30,13 +30,13 @@ client.on('message', function(message){
   if (client.user.id === message.author.id) return;
   if (message.content.startsWith('?help')) { // help
     client.reply(message, 'TBA');
-    return;
+    return; 
   }
 
   if (message.content.startsWith('?init')) { // init
     if (boundChannel) return;
     var channelToJoin = spliceArguments(message.content)[1];
-    for (var channel of message.channel.server.channels) {
+    for (var channel of message.channel.server) {
       if (channel instanceof Discord.VoiceChannel) {
         if (!channelToJoin || channel.name === channelToJoin) {
           boundChannel = message.channel;
