@@ -1,6 +1,6 @@
 var Discord = require('discord.js');
 var client = new Discord.Client();
- var ytdl = require('ytdl-core');
+var ytdl = require('ytdl-core');
 var request = require('superagent');
 var url = require('url');
 
@@ -26,23 +26,23 @@ var stockpile = '';
 
 // Handling api key
 
-client.on('message', m => {
-  if (client.user.id == m.author.id) return;
-
-  if (m.content.startsWith(`?help`)) { // help
-    if (!checkCommand(m, '?help')) return;
-    client.reply(m, 'TBA');
+client.on('message', {
+  if (client.user.id == message.author.id) return;
+ 
+  if (message.content.startsWith(`?help`)) { // help
+    if (!checkCommand(message, '?help')) return;
+    client.reply(message, 'TBA');
     return;
   }
 
-  if (m.content.startsWith(`?init`)) { // init
+  if (message.content.startsWith(`?init`)) { // init
     if (boundChannel) return;
-    var channelToJoin = spliceArguments(m.content)[1];
-    for (var channel of m.channel.server.channels) {
+    var channelToJoin = spliceArguments(message.content)[1];
+    for (var channel of message.channel.server.channels) {
       if (channel instanceof Discord.VoiceChannel) {
         if (!channelToJoin || channel.name === channelToJoin) {
-          boundChannel = m.channel;
-          client.reply(m, `Binding to textmeme channel <#${boundChannel.id}> and meme channel **${channel.name}** \`(${channel.id})\``);
+          boundChannel = message.channel;
+          client.reply(message, `Binding to textmeme channel <#${boundChannel.id}> and meme channel **${channel.name}** \`(${channel.id})\``);
           client.joinVoiceChannel(channel).catch(error);
           break;
         }
@@ -50,9 +50,9 @@ client.on('message', m => {
     }
   }
 
-  if (m.content.startsWith(`?destroy`)) { // destroy
+  if (message.content.startsWith(`?destroy`)) { // destroy
     if (!boundChannel) return;
-    client.reply(m, `Unbinding from <#${boundChannel.id}> and destroying meme connection`);
+    client.reply(message, `Unbinding from <#${boundChannel.id}> and destroying meme connection`);
     playQueue = [];
     client.internal.leaveVoiceChannel();
     boundChannel = false;
@@ -62,9 +62,9 @@ client.on('message', m => {
   }
 
   // Only respond to other messages inside the bound channel
-  if (!m.channel.equals(boundChannel)) return;
+  if (!message.channel.equals(boundChannel)) return;
   
-  if(m.content.toLowerCase().startsWith(`what is the best GMO food?`) or m.content.toLowerCase().startsWith(`?gimo`)){
+  if(message.content.toLowerCase().startsWith(`what is the best GMO food?`) or message.content.toLowerCase().startsWith(`?gimo`)){
     var meme = ytdl("https://www.youtube.com/watch?v=P1j5cVj5miA", var options = { filter: (format) => format.container === 'mp3',quality: 'lowest',};)
     if (client.internal.voiceConnection) {
         var connection = client.internal.voiceConnection;
@@ -138,5 +138,5 @@ function play(vid2beplayed) {
     });
 }
 }
-})
+});
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
