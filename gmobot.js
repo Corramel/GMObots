@@ -9,8 +9,8 @@ var YoutubeStream = require('./lib/youtube-stream.js');
 //var Saved = require('./lib/saved.js');
 //Saved.read();
 
-var Config = require('./lib/config.js');
-var CURRENT_REV = 2;
+//var Config = require('./lib/config.js');
+//var CURRENT_REV = 2;
 
 var playQueue = [];
 var boundChannel = false;
