@@ -36,7 +36,7 @@ client.on('message', function(message){
   if (message.content.startsWith('?init')) { // init
     if (boundChannel) return;
     var channelToJoin = spliceArguments(message.content)[1];
-    for (var channel of message.channel.server) {
+    for (var channel of message.channel.server.channels) {
       if (channel instanceof Discord.VoiceChannel) {
         if (!channelToJoin || channel.name === channelToJoin) {
           boundChannel = message.channel;
