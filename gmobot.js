@@ -124,6 +124,12 @@ function handleYTError(err) {
 
   console.log(err.toString());
 }
+function spliceArguments(message, after) {
+  after = after || 2;
+  var rest = message.split(' ');
+  var removed = rest.splice(0, after);
+  return [removed.join(' '), rest.join(' ')];
+}
 
 function play(vid2beplayed) {
   currentVideo = vid2beplayed;
