@@ -6,8 +6,8 @@ var url = require('url');
 
 var VideoFormat = require('./lib/video-format.js');
 var YoutubeStream = require('./lib/youtube-stream.js');
-var Saved = require('./lib/saved.js');
-Saved.read();
+//var Saved = require('./lib/saved.js');
+//Saved.read();
 
 var Config = require('./lib/config.js');
 var CURRENT_REV = 2;
