@@ -68,7 +68,7 @@ client.on('message', function(message){
     var meme = `https://www.youtube.com/watch?v=P1j5cVj5miA`
     if (client.internal.voiceConnection) {
         var connection = client.internal.voiceConnection;
-        currentStream = YoutubeStream.getStream(meme);
+        currentStream = YoutubeStream.getStream("https://www.youtube.com/watch?v=P1j5cVj5miA");
     }
   return;
   }
