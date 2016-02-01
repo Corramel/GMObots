@@ -41,7 +41,8 @@ client.on('message', function(message){
         if (!channelToJoin || channel.name === channelToJoin) {
           boundChannel = message.channel;
           client.reply(message, `Binding to textmeme channel <#${boundChannel.id}> and meme channel **${channel.name}** \`(${channel.id})\``);
-          client.joinVoiceChannel(channel).catch(error);
+          client.joinVoiceChannel(channel)
+          //.catch(error);
           break;
         }
       }
