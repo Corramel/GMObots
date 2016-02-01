@@ -2,7 +2,6 @@ var Discord = require('discord.js');
 var client = new Discord.Client();
 var ytdl = require('ytdl-core');
 var request = require('superagent');
-var url = require('url');
 
 var VideoFormat = require('./lib/video-format.js');
 var YoutubeStream = require('./lib/youtube-stream.js');
@@ -23,7 +22,7 @@ var botMention = false;
 
 var shouldStockpile = false;
 var stockpile = '';
-
+var url;
 // Handling api key
 
 client.on('message', function(message){
