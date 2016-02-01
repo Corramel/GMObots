@@ -1,3 +1,4 @@
+//going to uti
 var Discord = require('discord.js');
 var client = new Discord.Client();
 var ytdl = require('ytdl-core');
@@ -146,3 +147,4 @@ function play(vid2beplayed) {
 }
 });
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
+//Utilize save.js next time to get the job done, make the "commands" specifically made for it, but make the "yt" command run by itself, so a mixture of both, then.
