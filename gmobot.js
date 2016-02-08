@@ -25,7 +25,8 @@ var botMention = false;
 var shouldStockpile = false;
 var stockpile = '';
 var url;
-// Handling api key
+var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are GMOs'];
+var explanationHistory = [];
 
 client.on('message', function(message){
   if (client.user.id === message.author.id) return;
@@ -64,16 +65,36 @@ client.on('message', function(message){
   // Only respond to other messages inside the bound channel
   if (!message.channel.equals(boundChannel)) return;
   
-  if(message.content.toLowerCase().startsWith('what is the best GMO food?') || message.content.toLowerCase().startsWith('?gimo')){
-    client.sendMessage(message.channel, "Corn!")
+  if(message.content.toLowerCase().startsWith('what is the best genetically modified food?') || message.content.toLowerCase().startsWith('?gimo')){
+    client.reply(message, "Corn!")
    // var meme = ytdl(`https://www.youtube.com/watch?v=P1j5cVj5miA`, options = { filter: (format) => format.container === 'mp3', quality: 'lowest'});
-    var meme = `https://www.youtube.com/watch?v=P1j5cVj5miA`
-    if (client.internal.voiceConnection) {
-        var connection = client.internal.voiceConnection;
-        currentStream = YoutubeStream.getStream("https://www.youtube.com/watch?v=P1j5cVj5miA");
-    }
+    //var meme = `https://www.youtube.com/watch?v=P1j5cVj5miA`
+   // if (client.internal.voiceConnection) {
+    //    var connection = client.internal.voiceConnection;
+    //    currentStream = YoutubeStream.getStream("https://www.youtube.com/watch?v=P1j5cVj5miA");
+   // }
+   explanationHistorry.push("?gimo")
   return;
   }
+  if (explainGMOArray.indexOf(message.content.toLowerCase()) > -1) { // help
+    client.reply(message, 'Genetic engineering and genetic modification is the exact same thing.  They both involve the transfer of genes and can be performed in any organism.');
+    client.reply(message, 'Do you want more information? Type ?explainmore for more information')
+    explanantionHistory.push("?gmo?")
+    return; 
+  }
+  if (message.content.toLowerCase().startsWith("?explainmore")) {
+    var historyLength = explanationHistory.length
+    var latestCommand = explanantionHistory[historyLength - 1]
+    if (latestCommand = "?gimo"){
+      client.reply(message, "Corn is a great meme which spurted from the app _Tinder_, which featured a man pretending to be someone attractive in order for a 'social experiment', the man sent the emoji 🌽 to a girl on the other side. She responded with the phrase 'Thanks', which is what someone says after someone 'sends' them corn, either by words or by text.")
+    } else if (latestcommand = "?gmo?"){
+      client.reply(message, `A GMO (genetically modified organism) is the result of a laboratory process where genes from the DNA of one species are extracted and artificially forced into the genes of an unrelated plant or animal. The foreign genes may come from bacteria, viruses, insects, animals or even humans. Because this involves the transfer of genes, GMOs are also known as "transgenic" organisms.`)
+    }
+  }
+  
+//  if (message.content.toLowerCase().startsWith("?")) {
+    
+//  }
  /* if (m.content.startsWith(`${botMention} y`) // youtube
     || m.content.startsWith(`${botMention} q`) // queue
     || m.content.startsWith(`${botMention} p`)) { // play
