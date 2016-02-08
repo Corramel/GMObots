@@ -1,5 +1,8 @@
 //going to uti
 //https://www.npmjs.com/package/player
+//https://www.npmjs.com/package/komponist
+//https://www.npmjs.com/browse/keyword/audio
+//https://www.npmjs.com/package/purr
 var Discord = require('discord.js');
 var client = new Discord.Client();
 var ytdl = require('ytdl-core');
@@ -25,8 +28,13 @@ var botMention = false;
 var shouldStockpile = false;
 var stockpile = '';
 var url;
-var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are GMOs'];
+var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
 var explanationHistory = [];
+// objects
+var messages {
+  "?gmos?" : "what are GMOs",
+  "?gimos" : "Corn"
+};
 
 client.on('message', function(message){
   if (client.user.id === message.author.id) return;
