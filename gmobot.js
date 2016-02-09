@@ -1,4 +1,5 @@
 //going to uti
+//https://discord.gg/0nh61hWjcCjEGO51
 //https://www.npmjs.com/package/player
 //https://www.npmjs.com/package/komponist
 //https://www.npmjs.com/browse/keyword/audio
@@ -31,7 +32,7 @@ var url;
 var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
 var explanationHistory = [];
 // objects
-var messages {
+var messages = {
   "?gmos?" : "what are GMOs",
   "?gimos" : "Corn"
 };
