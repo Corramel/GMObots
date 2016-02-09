@@ -9,10 +9,10 @@ var client = new Discord.Client();
 var ytdl = require('ytdl-core');
 var request = require('superagent');
 
-var VideoFormat = require('./lib/video-format.js');
-var YoutubeStream = require('./lib/youtube-stream.js');
-var Saved = require('./lib/saved.js');
-Saved.read();
+//var VideoFormat = require('./lib/video-format.js');
+//var YoutubeStream = require('./lib/youtube-stream.js');
+//var Saved = require('./lib/saved.js');
+//Saved.read();
 
 //var Config = require('./lib/config.js');
 //var CURRENT_REV = 2;
