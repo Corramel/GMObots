@@ -144,7 +144,7 @@ function getInfoAndQueue(vid, m, suppress) {
   });
 }
 */
-function handleYTError(err) {
+/*function handleYTError(err) {
   if (err.toString().indexOf('Code 150') > -1) {
   // Video unavailable in country
    boundChannel.sendMessage('This video is unavailable in the country the bot is running in! Please try a different video.');
@@ -157,14 +157,14 @@ function handleYTError(err) {
   }
 
   console.log(err.toString());
-}
+} */
 function spliceArguments(message, after) {
   after = after || 2;
   var rest = message.split(' ');
   var removed = rest.splice(0, after);
   return [removed.join(' '), rest.join(' ')];
 }
-
+/*
 function play(vid2beplayed) {
   currentVideo = vid2beplayed;
   if (client.internal.voiceConnection) {
@@ -176,6 +176,6 @@ function play(vid2beplayed) {
     });
 }
 }
-});
+}); */
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
 //Utilize save.js next time to get the job done, make the "commands" specifically made for it, but make the "yt" command run by itself, so a mixture of both, then.
