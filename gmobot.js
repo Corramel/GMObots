@@ -30,7 +30,7 @@ var shouldStockpile = false;
 var stockpile = '';
 var url;
 var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
-var explanationHistory = [];
+var explainationHistory = [];
 // objects
 var messages = {
   "?gmos?" : "what are GMOs",
@@ -82,18 +82,18 @@ client.on('message', function(message){
     //    var connection = client.internal.voiceConnection;
     //    currentStream = YoutubeStream.getStream("https://www.youtube.com/watch?v=P1j5cVj5miA");
    // }
-   explanationHistorry.push("?gimo")
+   explainationHistory.push("?gimo")
   return;
   }
   if (explainGMOArray.indexOf(message.content.toLowerCase()) > -1) { // help
     client.reply(message, 'Genetic engineering and genetic modification is the exact same thing.  They both involve the transfer of genes and can be performed in any organism.');
     client.reply(message, 'Do you want more information? Type ?explainmore for more information')
-    explanantionHistory.push("?gmo?")
+    explainantionHistory.push("?gmo?")
     return; 
   }
   if (message.content.toLowerCase().startsWith("?explainmore")) {
-    var historyLength = explanationHistory.length
-    var latestCommand = explanantionHistory[historyLength - 1]
+    var historyLength = explainationHistory.length
+    var latestCommand = explainantionHistory[historyLength - 1]
     if (latestCommand = "?gimo"){
       client.reply(message, "Corn is a great meme which spurted from the app _Tinder_, which featured a man pretending to be someone attractive in order for a 'social experiment', the man sent the emoji 🌽 to a girl on the other side. She responded with the phrase 'Thanks', which is what someone says after someone 'sends' them corn, either by words or by text.")
     } else if (latestcommand = "?gmo?"){
