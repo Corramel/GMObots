@@ -73,7 +73,7 @@ client.on('message', function(message){
 
   // Only respond to other messages inside the bound channel
   if (!message.channel.equals(boundChannel)) return;
-  
+  var explainationHistory = [];
   if(message.content.toLowerCase().startsWith('what is the best genetically modified food?') || message.content.toLowerCase().startsWith('?gimo')){
     client.reply(message, "Corn!")
    // var meme = ytdl(`https://www.youtube.com/watch?v=P1j5cVj5miA`, options = { filter: (format) => format.container === 'mp3', quality: 'lowest'});
