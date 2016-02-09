@@ -16,7 +16,8 @@ var request = require('superagent');
 
 //var Config = require('./lib/config.js');
 //var CURRENT_REV = 2;
-
+var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
+var explainationHistory = [];
 var playQueue = [];
 var boundChannel = false;
 var currentStream = false;
@@ -29,8 +30,7 @@ var botMention = false;
 var shouldStockpile = false;
 var stockpile = '';
 var url;
-var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
-var explainationHistory = [];
+
 // objects
 var messages = {
   "?gmos?" : "what are GMOs",
