@@ -88,7 +88,7 @@ client.on('message', function(message){
   if (explainGMOArray.indexOf(message.content.toLowerCase()) > -1) { // help
     client.reply(message, 'Genetic engineering and genetic modification is the exact same thing.  They both involve the transfer of genes and can be performed in any organism.');
     client.reply(message, 'Do you want more information? Type ?explainmore for more information')
-    explainantionHistory.push("?gmo?")
+    explainationHistory.push("?gmo?")
     return; 
   }
   if (message.content.toLowerCase().startsWith("?explainmore")) {
