@@ -16,7 +16,64 @@ var request = require('superagent');
 
 //var Config = require('./lib/config.js');
 //var CURRENT_REV = 2;
+/*
+var comparsionArray = [];
+var indexArray = [
+];
+var kek;
+var memer = [
+  'm',
+  'e',
+  'm',
+  'e',
+  ' ',
+  'd',
+  'a',
+  'n',
+  'k'
+];
+function findInArray(letter) {
+kek = memer.indexOf(letter)
+  if (kek in indexArray) {
+    return memer.indexOf(letter, kek + 1);
+  } else if (!(kek in indexArray)) {
+    return meme.indexOf(letter);
+  } else {
+    alert('Err');
+  }
+}
+function findPhraseInArray(phrase) {
+  phrase = phrase.split('');
+  var lengthOfPhrase = phrase.length;
+  var i = 0;
+  while (indexArray < lengthOfPhrase) {
+    indexArray.push(findInArray(phrase[i]))
+    i++
+  }
+}
+function reorderPhrase(phrase) {
+  findPhraseInArray(phrase)
+  var lengthOfIndex = indexArray.length()
+  for (i = 0; i < lengthOfIndex; i++) {
+    positionOfi = indexArray.indexOf(indexArray[i]);
+    if (!(indexArray[i] > - 1)) {
+      indexArray.splice(positionOfi, 1)
+      lengthOfIndex = indexArray.length()
+    }
+  }
+  }
+
+function decodePhrase(array) {
+  array = memer || array
+   lengthOfIndex = indexArray.length()
+  for (i = 0; i < lengthOfindex; i++) {
+    comparsionArray.push(memer[indexArray[i]])
+  }
+}
+alert(comparsionArray)
+*/
 var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
+var possibleGMO = ['g', 'm', 'o', ];
 var explainationHistory = [];
 var playQueue = [];
 var boundChannel = false;
