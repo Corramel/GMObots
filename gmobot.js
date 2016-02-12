@@ -16,62 +16,68 @@ var request = require('superagent');
 
 //var Config = require('./lib/config.js');
 //var CURRENT_REV = 2;
-/*
 var comparsionArray = [];
-var indexArray = [
-];
+var userMessage;
+var indexArray = [];
 var kek;
-var memer = [
-  'm',
-  'e',
-  'm',
-  'e',
-  ' ',
-  'd',
-  'a',
-  'n',
-  'k'
-];
+var similarities = 0;
+var lengthOfIndex;
+var questionArray = [];
 function findInArray(letter) {
-kek = memer.indexOf(letter)
+kek = questionArray.indexOf(letter)
   if (kek in indexArray) {
     return memer.indexOf(letter, kek + 1);
   } else if (!(kek in indexArray)) {
-    return meme.indexOf(letter);
+    return questionArray.indexOf(letter);
   } else {
-    alert('Err');
+    console.log('Err');
   }
 }
 function findPhraseInArray(phrase) {
-  phrase = phrase.split('');
-  var lengthOfPhrase = phrase.length;
+  var dankphrase = phrase.split('');
+  lengthOfPhrase = phrase.length;
   var i = 0;
-  while (indexArray < lengthOfPhrase) {
-    indexArray.push(findInArray(phrase[i]))
-    i++
+  for(i; i < lengthOfPhrase; i++) {
+    indexArray.push(findInArray(dankphrase[i]))
   }
 }
 function reorderPhrase(phrase) {
   findPhraseInArray(phrase)
-  var lengthOfIndex = indexArray.length()
+  var lengthOfIndex = indexArray.length
   for (i = 0; i < lengthOfIndex; i++) {
-    positionOfi = indexArray.indexOf(indexArray[i]);
-    if (!(indexArray[i] > - 1)) {
+    var positionOfi = indexArray.indexOf(indexArray[i]);
+    if ((indexArray[i] < 0)) {
       indexArray.splice(positionOfi, 1)
-      lengthOfIndex = indexArray.length()
-    }
+      lengthOfIndex = indexArray.length
+   }
   }
   }
 
 function decodePhrase(array) {
-  array = memer || array
-   lengthOfIndex = indexArray.length()
-  for (i = 0; i < lengthOfindex; i++) {
-    comparsionArray.push(memer[indexArray[i]])
+  var lengthOfIndex = indexArray.length
+  for (i=0; i < lengthOfIndex; i++) {
+    comparsionArray.push(questionArray[indexArray[i]])
   }
 }
-alert(comparsionArray)
-*/
+function checkIfSimilar(array) {
+  decodePhrase(array)
+  var lengthOfquestion = questionArray.length
+  for(i=0;i<lengthOfmemer;i++){
+    if(comparsionArray[i] == questionArray[i]){
+      similarities = similarities + 1
+    }
+  }
+  if(similarities == questionArray.length) {
+    alert(`original command`)
+  }else if (similarities > memer.length * 0.75 && similarities < memer.length * 0.99){
+    alert(`similar! did you mean: holdingvariable ?`)
+  } else if(similarities > memer.length * 0.5 && similarities < memer.length * 0.75) {
+    alert(`i think know what you meant by that, did you mean: holdingvariable ?`)
+  } else {
+    return "I don't know what you meant by that."
+  }
+    }
+
 var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
 var possibleGMO = ['g', 'm', 'o', ];
 var explainationHistory = [];
