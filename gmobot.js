@@ -68,11 +68,11 @@ function checkIfSimilar(array) {
     }
   }
   if(similarities == questionArray.length) {
-    alert(`original command`)
+    client.reply(`${regularresponse}`)
   }else if (similarities > memer.length * 0.75 && similarities < memer.length * 0.99){
-    alert(`similar! did you mean: holdingvariable ?`)
+    client.reply(`Did you mean: ${command}?`)
   } else if(similarities > memer.length * 0.5 && similarities < memer.length * 0.75) {
-    alert(`i think know what you meant by that, did you mean: holdingvariable ?`)
+    client.reply(`I _think_ I know what you meant by that. Did you mean: ${command}?`)
   } else {
     return "I don't know what you meant by that."
   }
