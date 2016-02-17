@@ -1,5 +1,5 @@
 //going to uti
-//https://discord.gg/0nh61hWjcCjEGO51
+//https://discord.gg/0nh61hWjcCiEPZC0
 //https://www.npmjs.com/package/player
 //https://www.npmjs.com/package/komponist
 //https://www.npmjs.com/browse/keyword/audio
