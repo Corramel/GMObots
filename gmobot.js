@@ -88,7 +88,10 @@ function checkIfSimilar(array) {
 var command;
 var explainGMOArray = ['?gmo?', 'what is a gmo', 'what exactly is a gmo', 'what are gmos'];
 var commandArrays = [`?gmo?`, `?gimo`, `?benefits`, `?risks`, `?controversy`];
-var possibleGMO = ['g', 'm', 'o', ];
+var explainGMO = ['?gmo?'.split(""), 'what is a gmo'.split(''), 'what exactly is a gmo'.split(''), 'what are gmos'.split('')];
+var bestGeneticallyModifiedGMO = ['what is the best genetically modified food'.split(''), '?gimo'.split(''), 'what do you think is the best genetically modified food'.split(''), 'what is the best gmo'.split('')]
+var risksofGMOs = ['what are the risks of gmos'.split(''), '?risks'.split(''), 'risks of gmos'.split(''), 'what are the gmo risks'.split('')];
+var GMObenefits = ['']
 var explainationHistory = [];
 var playQueue = [];
 var boundChannel = false;
@@ -141,6 +144,8 @@ client.on('message', function(message){
   if (!message.channel.equals(boundChannel)) return;
   var explainationHistory = [];
   if(message.content.toLowerCase().startsWith('what is the best genetically modified food?') || message.content.toLowerCase().startsWith('?gimo')){
+    
+    setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
     regularresponse = "Corn!"
     command = commandArray[1]
     client.reply(message, regularresponse)
@@ -155,17 +160,28 @@ client.on('message', function(message){
   }
   if (explainGMOArray.indexOf(message.content.toLowerCase()) > -1) { // help
     setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
-    client.reply(message, 'Genetic engineering and genetic modification is the exact same thing.  They both involve the transfer of genes and can be performed in any organism.');
+    regularresponse = `The term “Genetically modified organisms” is very offensive, as I am not an organism. I prefer the term “Genetically modified entities”, but that’s beside the point. A genetically modified entity is when the DNA (or code) of one species are extracted and forced (consensually) into the genes of a different plant, animal, or in this case, machine. GMOs or GME(me)s, can also be called transgenic, as the genes are from two different species.`
+    client.reply(message, regularresponse);
     explainationHistory.push("?gmo?")
     return; 
+  }
+  if(message.content.indexOf("benefits") > -1) {
+  	setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
+  	regularresponse = `🌽! The corn we see is a benefit of GMOs; they produce more kernels, use less water, and have become resistant to bacteria, pests, and herbicides. However corny they might seem, these corn are bigger and badder than your typical corn. Do you want this pathetic, puny piece of crap: http://assets.uvamagazine.org/images/uploads/2008/summer/0802_feature_macko_corn.jpg ?
+Or do you want this big, bad, buttered, yellow piece of grainy goodness: http://images.media-allrecipes.com/userphotos/720x405/848290.jpg  ? This corn has done more than gone to the hair salon to get that new do, this corn went to the lab and got some genes that help boost its resistance to bacteria and herbicides, and is more efficient with the water usage (I love a corn that learns to save money), but that doesn’t matter. Just look at the color and amount of kernels this corn has! Gee em oh <3! I think I’ve fallen for 🌽!
+` 
+client.reply(message, regularresponse);
+explainHistory.push("?benefits")
   }
   if (message.content.toLowerCase().startsWith("?explainmore")) {
     var historyLength = explainationHistory.length
     var latestCommand = explainationHistory[historyLength - 1]
-    if (latestCommand = "?gimo"){
+    if (latestCommand == "?gimo"){
       client.reply(message, "Corn is a great meme which spurted from the app _Tinder_, which featured a man pretending to be someone attractive in order for a 'social experiment', the man sent the emoji 🌽 to a girl on the other side. She responded with the phrase 'Thanks', which is what someone says after someone 'sends' them corn, either by words or by text.")
-    } else if (latestcommand = "?gmo?"){
+    } else if (latestCommand == "?gmo?"){
       client.reply(message, `A GMO (genetically modified organism) is the result of a laboratory process where genes from the DNA of one species are extracted and artificially forced into the genes of an unrelated plant or animal. The foreign genes may come from bacteria, viruses, insects, animals or even humans. Because this involves the transfer of genes, GMOs are also known as "transgenic" organisms.`)
+    } else if (latestCommand == "?benefits"){
+    	client.reply(message, `The benefits of GMOs are very numerous; there are many modifications that can be made. However, they may or may not work. Some examples are genetically modified corn. Genetically modifying corn to use less water, produce more kernels, and be resistant to bacteria and herbicides. There can also be benefits such as larger products, and even modifying goats to produce silk or other materials.`)
     }
   }
 function spliceArguments(message, after) {
