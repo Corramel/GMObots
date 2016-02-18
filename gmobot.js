@@ -143,7 +143,7 @@ client.on('message', function(message){
     
     setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
     regularresponse = "Corn!"
-    command = commandArray[1]
+    command = commandArrays[1]
     client.reply(message, regularresponse)
    // var meme = ytdl(`https://www.youtube.com/watch?v=P1j5cVj5miA`, options = { filter: (format) => format.container === 'mp3', quality: 'lowest'});
     //var meme = `https://www.youtube.com/watch?v=P1j5cVj5miA`
