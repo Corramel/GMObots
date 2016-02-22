@@ -161,12 +161,22 @@ client.on('message', function(message){
     return; 
   }
   if(message.content.indexOf("benefits") > -1) {
-  	setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
-  	regularresponse = `🌽! The corn we see is a benefit of GMOs; they produce more kernels, use less water, and have become resistant to bacteria, pests, and herbicides. However corny they might seem, these corn are bigger and badder than your typical corn. Do you want this pathetic, puny piece of crap: http://assets.uvamagazine.org/images/uploads/2008/summer/0802_feature_macko_corn.jpg ?
-Or do you want this big, bad, buttered, yellow piece of grainy goodness: http://images.media-allrecipes.com/userphotos/720x405/848290.jpg  ? This corn has done more than gone to the hair salon to get that new do, this corn went to the lab and got some genes that help boost its resistance to bacteria and herbicides, and is more efficient with the water usage (I love a corn that learns to save money), but that doesn’t matter. Just look at the color and amount of kernels this corn has! Gee em oh <3! I think I’ve fallen for 🌽!
-` 
-client.reply(message, regularresponse);
+  	setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 20000)
+  	regularresponse = [`🌽! The corn we see is a benefit of GMOs; they produce more kernels, use less water, and have become resistant to bacteria, pests, and herbicides. However corny they might seem, these corn are bigger and badder than your typical corn.`,` Do you want this pathetic, puny piece of crap: http://assets.uvamagazine.org/images/uploads/2008/summer/0802_feature_macko_corn.jpg?`,`Or do you want this big, bad, buttered, yellow piece of grainy goodness: http://images.media-allrecipes.com/userphotos/720x405/848290.jpg?`, `This corn has done more than gone to the hair salon to get that new do, this corn went to the lab and got some genes that help boost its resistance to bacteria and herbicides, and is more efficient with the water usage (I love a corn that learns to save money), but that doesn’t matter. Just look at the color and amount of kernels this corn has! Gee em oh <3! I think I’ve fallen for 🌽!`]
+
+client.reply(message, regularresponse[0]);
+setTimeout(function(){client.reply(message, regularresponse[1])}, 4000)
+setTimeout(function(){client.reply(message, regularresponse[2])}, 6000)
+setTimeout(function(){client.reply(message, regularresponse[3])}, 10000)
 explainationHistory.push("?benefits");
+return;
+  }
+  if(message.content.indexOf("risks") > -1){	
+    setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
+    client.reply(`Risks? I’ll have you know! GME(me)s are infallible! Perfect! Flawless! Exquisite!`)
+  setTimeout(function(){client.reply(`Okay, you got me. While most GMOs are sterile, some are indeed able to engage with the birds and the bees. It would be impossible after a few decades to fully clean up the gene pool, as traits can be recessive for a long time until a number of generations. By forcefully inserting genes into unrelated species, there could be so many unpredictable side effects. (For me, I’d probably just outright stop working :(.) For plants, new toxins and allergens can be produced. But those scientists are pretty smart, so it should be able to be fixed. Right? Right. The potential impact is bigger than my love for 🌽. Now you might be thinking:
+“GMOs are trash! Absolutely disgusting! Unbelievable! Terrible!”, but the truth is, GMOs are not good nor are they bad.`)}, 5000)
+explainationHistory.push("?risks");
 return;
   }
   if (message.content.toLowerCase().startsWith("?explainmore")) {
@@ -178,6 +188,8 @@ return;
       client.reply(message, `A GMO (genetically modified organism) is the result of a laboratory process where genes from the DNA of one species are extracted and artificially forced into the genes of an unrelated plant or animal. The foreign genes may come from bacteria, viruses, insects, animals or even humans. Because this involves the transfer of genes, GMOs are also known as "transgenic" organisms.`)
     } else if (latestCommand == "?benefits"){
     	client.reply(message, `The benefits of GMOs are very numerous; there are many modifications that can be made. However, they may or may not work. Some examples are genetically modified corn. Genetically modifying corn to use less water, produce more kernels, and be resistant to bacteria and herbicides. There can also be benefits such as larger products, and even modifying goats to produce silk or other materials.`)
+    } else if (latestCommand = "?risks"){
+      client.reply(message, `While some GMOs are sterile, some are able to cross pollinate and their seeds can travel. It is impossible to fully clean up the contaminated gene pool. By mixing genes from totally unrelated species, genetic engineering unleashes a host of unpredictable side effects. Moreover, irrespective of the type of genes that are inserted, the very process of creating a GM plant can result in massive collateral damage that produces new toxins, allergens, and nutritional deficiencies. However this is very avoidable, and possible to be fixed. The potential impact is huge, threatening the health of future generations. GMO contamination has also caused economic losses for organic and non-GMO farmers who often struggle to keep their crops pure. However, the highest risk GMOs give is resistance to herbicide, ironically. The phrase “really wash your fruit and vegetables” is very important if they’re non-organic. The potential of having leftover herbicide on your food is very dangerous.`)
     }
   }
 function spliceArguments(message, after) {
