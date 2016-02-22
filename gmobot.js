@@ -167,7 +167,8 @@ client.on('message', function(message){
 Or do you want this big, bad, buttered, yellow piece of grainy goodness: http://images.media-allrecipes.com/userphotos/720x405/848290.jpg  ? This corn has done more than gone to the hair salon to get that new do, this corn went to the lab and got some genes that help boost its resistance to bacteria and herbicides, and is more efficient with the water usage (I love a corn that learns to save money), but that doesn’t matter. Just look at the color and amount of kernels this corn has! Gee em oh <3! I think I’ve fallen for 🌽!
 ` 
 client.reply(message, regularresponse);
-explainationHistory.push("?benefits")
+explainationHistory.push("?benefits");
+return;
   }
   if (message.content.toLowerCase().startsWith("?explainmore")) {
     var historyLength = explainationHistory.length
