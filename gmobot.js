@@ -138,7 +138,6 @@ client.on('message', function(message){
 
   // Only respond to other messages inside the bound channel
   if (!message.channel.equals(boundChannel)) return;
-  var explainationHistory = [];
   if(message.content.toLowerCase().startsWith('what is the best genetically modified food?') || message.content.toLowerCase().startsWith('?gimo')){
     
     setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
