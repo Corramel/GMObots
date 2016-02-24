@@ -105,7 +105,7 @@ var url;
 client.on('message', function(message){
   if (client.user.id === message.author.id) return;
   if (message.content.startsWith('?help')) { // help
-    client.reply(message, 'TBA');
+    client.reply(message, 'Commands are ?gimo, ?gmos?, ?risks, ?benefits.');
     return; 
   }
 
@@ -173,8 +173,8 @@ return;
   }
   if(message.content.indexOf("risks") > -1){	
     setTimeout(function(){client.reply(message, 'Do you want more information? Type ?explainmore for more information')}, 15000)
-    client.reply(`Risks? I’ll have you know! GME(me)s are infallible! Perfect! Flawless! Exquisite!`)
-  setTimeout(function(){client.reply(`Okay, you got me. While most GMOs are sterile, some are indeed able to engage with the birds and the bees. It would be impossible after a few decades to fully clean up the gene pool, as traits can be recessive for a long time until a number of generations. By forcefully inserting genes into unrelated species, there could be so many unpredictable side effects. (For me, I’d probably just outright stop working :(.) For plants, new toxins and allergens can be produced. But those scientists are pretty smart, so it should be able to be fixed. Right? Right. The potential impact is bigger than my love for 🌽. Now you might be thinking:
+    client.reply(message, `Risks? I’ll have you know! GME(me)s are infallible! Perfect! Flawless! Exquisite!`)
+  setTimeout(function(){client.reply(message, `Okay, you got me. While most GMOs are sterile, some are indeed able to engage with the birds and the bees. It would be impossible after a few decades to fully clean up the gene pool, as traits can be recessive for a long time until a number of generations. By forcefully inserting genes into unrelated species, there could be so many unpredictable side effects. (For me, I’d probably just outright stop working :(.) For plants, new toxins and allergens can be produced. But those scientists are pretty smart, so it should be able to be fixed. Right? Right. The potential impact is bigger than my love for 🌽. Now you might be thinking:
 “GMOs are trash! Absolutely disgusting! Unbelievable! Terrible!”, but the truth is, GMOs are not good nor are they bad.`)}, 5000)
 explainationHistory.push("?risks");
 return;
