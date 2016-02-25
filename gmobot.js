@@ -6,16 +6,8 @@
 //https://www.npmjs.com/package/purr
 var Discord = require('discord.js');
 var client = new Discord.Client();
-var ytdl = require('ytdl-core');
-var request = require('superagent');
+var request = require('request');
 
-//var VideoFormat = require('./lib/video-format.js');
-//var YoutubeStream = require('./lib/youtube-stream.js');
-//var Saved = require('./lib/saved.js');
-//Saved.read();
-
-//var Config = require('./lib/config.js');
-//var CURRENT_REV = 2;
 var comparsionArray = [];
 var userMessage;
 var indexArray = [];
