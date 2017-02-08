@@ -15,22 +15,4 @@ client.on("message", function(message){ //standard message syntax
   return;
 }
 });
-function play(video) { //video will be the selected video
-    var selectedVid = video || defaultVideo
-  if (client.internal.voiceConnection) {
-    var connection = client.internal.voiceConnection;
-    currentStream = video.getStream();
-
-    currentStream.on('error', (err) => {
-      if (err.code === 'ECONNRESET') {
-        if (!Config.suppressPlaybackNetworkError) {
-          boundChannel.sendMessage(`There was a network error, the connection to youtube may be unstable.`);
-        }
-      } else {
-        boundChannel.sendMessage(`There was an error during playback **${err}**`);
-      }
-
-      playStopped(); // skip to next video
-    });
-  })
 client.login(process.argv[2], process.argv[3]).catch((e) => console.log(e));
