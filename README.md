@@ -1,2 +1,2 @@
 # GMOBot, for AP Bio
-Dank memes!
+Dead (Must update to discordjs v11)
